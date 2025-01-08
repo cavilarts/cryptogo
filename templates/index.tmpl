@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }}</title>
+  </head>
+  <body>
+    <div>Hello World</div>
+    <span style="background-color: {{if .CurrentlyAvailable -}} green {{- else -}} red {{- end -}}; width: 100%; padding: 20px 30px; display: block;"></span>
+    <img src="{{.Image}}" />
+    <p>I am:</p>
+    <ul>
+      {{ range .Facts }}
+        <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    <footer>{{.Made}}</footer>
+  </body>
+</html>
